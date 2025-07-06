@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoesStore - Kontak Kami</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles (Consistent with index.html) */
+        .main-header {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            padding: 15px 0;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 8px;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .content-section h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            padding: 25px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 300px;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .contact-item p {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+            font-size: 1em;
+            outline: none;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form textarea:focus {
+            background: white;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(238, 90, 36, 0.3);
+        }
+
+        .contact-form button:hover {
+            background: linear-gradient(45deg, #ee5a24, #ff6b6b);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(238, 90, 36, 0.4);
+        }
+
+        /* Footer Styles (Consistent with index.html) */
+        .main-footer {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            margin-top: 50px;
+            padding: 40px 0 20px;
+            border-radius: 15px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 30px;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-menu {
+                gap: 20px;
+            }
+            .content-section {
+                padding: 30px 20px;
+            }
+            .content-section h1 {
+                font-size: 2em;
+            }
+            .contact-item {
+                max-width: 100%;
+            }
+            .contact-form {
+                padding: 20px;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-header">
+        <div class="header-content">
+            <div class="logo">ShoesStore</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#products-grid">Produk</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-section">
+            <h1>Kontak Kami</h1>
+            <p>Kami senang mendengar dari Anda! Jangan ragu untuk menghubungi kami melalui informasi di bawah ini atau gunakan formulir kontak untuk pertanyaan atau masukan.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Alamat Kami</h3>
+                    <p>📍 Jl. Merdeka No. 123</p>
+                    <p>Kota Jakarta, 12345</p>
+                    <p>Indonesia</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Telepon</h3>
+                    <p>📞 (021) 123-4567</p>
+                    <p>Senin - Jumat: 09:00 - 17:00 WIB</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p>✉️ <a href="mailto:info@shoesstore.com">info@shoesstore.com</a></p>
+                    <p>Kami akan merespons dalam 24 jam kerja.</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Kirim Pesan kepada Kami</h2>
+                <form action="#" method="POST">
+                    <label for="name">Nama Lengkap:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email Anda:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="subject">Subjek:</label>
+                    <input type="text" id="subject" name="subject">
+
+                    <label for="message">Pesan Anda:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit">Kirim Pesan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Tentang ShoesStore</h3>
+                <p>Kami adalah toko sepatu terpercaya yang menyediakan koleksi sepatu berkualitas tinggi dari brand-brand ternama dunia dengan harga terjangkau.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Kategori Produk</h3>
+                <a href="index.html#products-grid">Sepatu Running</a>
+                <a href="index.html#products-grid">Sepatu Casual</a>
+                <a href="index.html#products-grid">Sepatu Olahraga</a>
+                <a href="index.html#products-grid">Sepatu Lifestyle</a>
+            </div>
+            <div class="footer-section">
+                <h3>Layanan Pelanggan</h3>
+                <a href="contact.html">Hubungi Kami</a>
+                <a href="#">Cara Pemesanan</a>
+                <a href="#">Kebijakan Pengembalian</a>
+                <a href="#">Garansi Produk</a>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p>📍 Jl. Merdeka No. 123, Jakarta</p>
+                <p>📞 (021) 123-4567</p>
+                <p>✉️ info@shoesstore.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ShoesStore. Semua hak dilindungi undang-undang.</p>
+        </div>
+    </div>
+</body>
+</html>

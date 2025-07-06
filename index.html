@@ -1,287 +1,697 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sygara - Natural & Fresh</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoesStore - Koleksi Sepatu Terbaik</title>
     <style>
-        .navbar-nav {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .btn {
-            border-radius: 50px;
-            padding: 12px 20px;
-            margin-left: 10px;
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
-        .navbar-brand img {
-            height: 40px;
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        .hero-section {
-            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
-            padding: 60px 0;
-            border-radius: 20px;
-            margin: 30px 0;
-        }
-        .hero-text {
-            color: #2e7d32;
-        }
-        .hero-text h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        .hero-text p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-        .product-card {
-            border: none;
+
+        /* Header Styles */
+        .main-header {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            padding: 15px 0;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             margin-bottom: 20px;
-            transition: transform 0.3s ease;
         }
-        .product-card:hover {
-            transform: translateY(-5px);
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        .product-card img {
-            border-radius: 15px 15px 0 0;
-            height: 150px;
-            object-fit: cover;
-        }
-        .product-card .card-body {
-            padding: 15px;
-        }
-        .product-card h6 {
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 5px;
-        }
-        .product-card .price {
-            color: #2e7d32;
-            font-weight: bold;
-        }
-        .section-title {
-            color: #2e7d32;
-            font-weight: bold;
-            margin: 40px 0 30px 0;
-        }
-        .info-card {
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 30px 0;
-        }
-        .info-card h5 {
-            color: #1976d2;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-        .info-card p {
-            color: #424242;
-            margin-bottom: 0;
-        }
-        .farmer-section {
-            background: linear-gradient(135deg, #fff3e0 0%, #ffcc02 100%);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 30px 0;
-        }
-        .farmer-section h5 {
-            color: #f57c00;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-        .footer-section {
-            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+
+        .logo {
             color: white;
-            border-radius: 20px;
-            padding: 40px;
-            margin: 30px 0;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border-radius: 8px;
+        }
+
+        .nav-menu a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            border-radius: 15px;
+            margin-bottom: 30px;
             text-align: center;
         }
-        .footer-section h4 {
+
+        h1 {
+            color: white;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 20px 0;
+        }
+
+        .product-title {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
             font-weight: bold;
+        }
+
+        .product-price {
+            font-size: 1.8em;
+            color: #e74c3c;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .product-description {
+            color: #666;
+            line-height: 1.6;
             margin-bottom: 20px;
         }
-        .hero-image {
-            max-width: 100%;
-            height: auto;
+
+        .buy-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(238, 90, 36, 0.3);
+        }
+
+        .buy-button:hover {
+            background: linear-gradient(45deg, #ee5a24, #ff6b6b);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(238, 90, 36, 0.4);
+        }
+
+        /* Footer Styles */
+        .main-footer {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            margin-top: 50px;
+            padding: 40px 0 20px;
             border-radius: 15px;
         }
-        .info-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        .farmer-image {
-            max-width: 100%;
-            height: auto;
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 30px;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Modal Popup - Smaller Size */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 8% auto;
+            padding: 0;
             border-radius: 15px;
+            max-width: 450px;
+            width: 85%;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+            overflow: hidden;
+        }
+
+        @keyframes modalSlideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .modal-info {
+            padding: 20px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            background: rgba(0,0,0,0.5);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .close:hover {
+            background: rgba(0,0,0,0.7);
+        }
+
+        .modal-title {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .modal-price {
+            font-size: 1.8em;
+            color: #e74c3c;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .modal-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        .size-selector {
+            margin-bottom: 20px;
+        }
+
+        .size-selector label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .size-options {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .size-option {
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+            font-size: 0.9em;
+        }
+
+        .size-option:hover,
+        .size-option.selected {
+            border-color: #ff6b6b;
+            background: #ff6b6b;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-menu {
+                gap: 20px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                margin: 15% auto;
+                width: 95%;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="assets/logo-hitam.png" alt="Sygara Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Beranda</a>
-                    <a class="nav-link" href="#">Produk</a>
-                    <div class="vr ms-3 me-3"></div>
-                    <a class="btn btn-outline-warning">Masuk</a>
-                    <a class="btn btn-success">Daftar</a>
-                </div>
-            </div>
+    <div class="main-header">
+        <div class="header-content">
+            <div class="logo">ShoesStore</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#products-grid">Produk</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </div>
 
-    <!-- Main Content -->
     <div class="container">
-        <!-- Hero Section -->
-        <div class="row hero-section align-items-center">
-            <div class="col-md-6">
-                <div class="hero-text">
-                    <h1>Natural & Segar untuk kesehatan</h1>
-                    <p>Dapatkan sayuran dan buah-buahan segar langsung dari petani terpercaya</p>
-                    <button class="btn btn-success btn-lg">Belanja Sekarang</button>
-                </div>
-            </div>
-            <div class="col-md-6 text-center">
-                <img src="assets/banner1.png" alt="Fresh Vegetables" class="img-fluid hero-image">
-            </div>
-        </div>
+        <header>
+            <h1>ShoesStore</h1>
+            <p class="subtitle">Koleksi Sepatu Terbaik untuk Gaya Hidup Anda</p>
+        </header>
 
-        <!-- Info Card -->
-        <div class="row">
-            <div class="col-md-6">
-                <div class="info-card">
-                    <h5>Produk segar langsung dari kebun</h5>
-                    <p>Kami menjamin kesegaran produk dengan pengiriman langsung dari petani lokal terpercaya</p>
+        <div class="products-grid" id="products-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=250&fit=crop" 
+                     alt="Nike Air Max" class="product-image" onclick="openModal('modal1')">
+                <div class="product-info">
+                    <h3 class="product-title">Nike Air Max 270</h3>
+                    <p class="product-price">Rp 1.899.000</p>
+                    <p class="product-description">Sepatu running premium dengan teknologi Air Max yang memberikan kenyamanan maksimal untuk aktivitas sehari-hari.</p>
+                    <button class="buy-button">Beli Sekarang</button>
                 </div>
             </div>
-            <div class="col-md-6">
-                <img src="assets/sayur.png" alt="Fresh Cabbage and Vegetables" class="img-fluid info-image">
-            </div>
-        </div>
 
-        <!-- Products Section -->
-        <h3 class="section-title">Pilihan Buah & Sayur Segar</h3>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card product-card">
-                    <img src="assets/pisang.png" alt="Pisang" class="card-img-top">
-                    <div class="card-body">
-                        <h6>Pisang Cavendish</h6>
-                        <p class="price">Rp 25.000</p>
-                    </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400&h=250&fit=crop" 
+                     alt="Adidas Ultraboost" class="product-image" onclick="openModal('modal2')">
+                <div class="product-info">
+                    <h3 class="product-title">Adidas Ultraboost 22</h3>
+                    <p class="product-price">Rp 2.199.000</p>
+                    <p class="product-description">Sepatu lari dengan teknologi Boost yang memberikan energi kembali di setiap langkah. Cocok untuk runner profesional.</p>
+                    <button class="buy-button">Beli Sekarang</button>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card product-card">
-                    <img src="assets/semangka.png" alt="Watermelon" class="card-img-top">
-                    <div class="card-body">
-                        <h6>Semangka</h6>
-                        <p class="price">Rp 15.000</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card product-card">
-                    <img src="assets/Jeruk.png" alt="Orange" class="card-img-top">
-                    <div class="card-body">
-                        <h6>Jeruk Medan</h6>
-                        <p class="price">Rp 30.000</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card product-card">
-                    <img src="assets/apel.png" alt="Apple" class="card-img-top">
-                    <div class="card-body">
-                        <h6>Apel Fuji</h6>
-                        <p class="price">Rp 45.000</p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card product-card">
-                    <img src="assets/wortel.png" alt="Carrot" class="card-img-top">
-                    <div class="card-body">
-                        <h6>Wortel</h6>
-                        <p class="price">Rp 18.000</p>
-                    </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=400&h=250&fit=crop" 
+                     alt="Converse All Star" class="product-image" onclick="openModal('modal3')">
+                <div class="product-info">
+                    <h3 class="product-title">Converse All Star Classic</h3>
+                    <p class="product-price">Rp 899.000</p>
+                    <p class="product-description">Sepatu klasik yang timeless dengan desain ikonik. Sempurna untuk gaya kasual dan streetwear.</p>
+                    <button class="buy-button">Beli Sekarang</button>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card product-card">
-                    <img src="assets/tomat.png" alt="Tomato" class="card-img-top">
-                    <div class="card-body">
-                        <h6>Tomat</h6>
-                        <p class="price">Rp 22.000</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card product-card">
-                    <img src="assets/bayam.png" alt="Lettuce" class="card-img-top">
-                    <div class="card-body">
-                        <h6>Selada</h6>
-                        <p class="price">Rp 12.000</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card product-card">
-                    <img src="assets/brokoli.png" alt="Broccoli" class="card-img-top">
-                    <div class="card-body">
-                        <h6>Brokoli</h6>
-                        <p class="price">Rp 28.000</p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Farmer Section -->
-        <div class="row farmer-section align-items-center">
-            <div class="col-md-6">
-                <h5>Produk yang dijamin 6 dijam dengan kualitas terbaik</h5>
-                <p>Kami bekerja sama langsung dengan petani lokal untuk memastikan kualitas dan kesegaran produk yang sampai ke tangan Anda.</p>
-            </div>
-            <div class="col-md-6 text-center">
-                <img src="assets/banner3.png" alt="Happy Farmer" class="img-fluid farmer-image">
-            </div>
-        </div>
-
-        <!-- Footer Section -->
-        <div class="footer-section">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
-                        <img src="assets/logo-putih.png" alt="Sygara Logo" style="height: 50px;">
-                    </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&h=250&fit=crop" 
+                     alt="Vans Old Skool" class="product-image" onclick="openModal('modal4')">
+                <div class="product-info">
+                    <h3 class="product-title">Vans Old Skool</h3>
+                    <p class="product-price">Rp 1.199.000</p>
+                    <p class="product-description">Sepatu skateboard legendaris dengan desain side stripe yang ikonik. Cocok untuk aktivitas sehari-hari.</p>
+                    <button class="buy-button">Beli Sekarang</button>
                 </div>
-                <div class="col-md-6">
-                    <h4>Ayo belanja sekarang dan mulai hidup sehat!</h4>
-                    <button class="btn btn-light btn-lg">Mulai Belanja</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400&h=250&fit=crop" 
+                     alt="Reebok Classic" class="product-image" onclick="openModal('modal5')">
+                <div class="product-info">
+                    <h3 class="product-title">Reebok Classic Leather</h3>
+                    <p class="product-price">Rp 1.299.000</p>
+                    <p class="product-description">Sepatu klasik dengan desain retro yang timeless. Terbuat dari kulit asli dengan sol karet yang tahan lama dan nyaman digunakan.</p>
+                    <button class="buy-button">Beli Sekarang</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=250&fit=crop" 
+                     alt="New Balance 574" class="product-image" onclick="openModal('modal6')">
+                <div class="product-info">
+                    <h3 class="product-title">New Balance 574</h3>
+                    <p class="product-price">Rp 1.299.000</p>
+                    <p class="product-description">Sepatu retro dengan teknologi ENCAP midsole yang memberikan stabilitas dan daya tahan luar biasa untuk penggunaan sehari-hari.</p>
+                    <button class="buy-button">Beli Sekarang</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <div class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Tentang ShoesStore</h3>
+                <p>Kami adalah toko sepatu terpercaya yang menyediakan koleksi sepatu berkualitas tinggi dari brand-brand ternama dunia dengan harga terjangkau.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Kategori Produk</h3>
+                <a href="#">Sepatu Running</a>
+                <a href="#">Sepatu Casual</a>
+                <a href="#">Sepatu Olahraga</a>
+                <a href="#">Sepatu Lifestyle</a>
+            </div>
+            <div class="footer-section">
+                <h3>Layanan Pelanggan</h3>
+                <a href="#">Hubungi Kami</a>
+                <a href="#">Cara Pemesanan</a>
+                <a href="#">Kebijakan Pengembalian</a>
+                <a href="#">Garansi Produk</a>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p>📍 Jl. Merdeka No. 123, Jakarta</p>
+                <p>📞 (021) 123-4567</p>
+                <p>✉️ info@shoesstore.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ShoesStore. Semua hak dilindungi undang-undang.</p>
+        </div>
+    </div>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=450&h=200&fit=crop" 
+                 alt="Nike Air Max" class="modal-image">
+            <div class="modal-info">
+                <h2 class="modal-title">Nike Air Max 270</h2>
+                <p class="modal-price">Rp 1.899.000</p>
+                <p class="modal-description">
+                    Sepatu running premium dengan teknologi Air Max yang memberikan kenyamanan maksimal. 
+                    Dilengkapi dengan sol yang responsif dan upper yang breathable untuk performa terbaik.
+                </p>
+                <div class="size-selector">
+                    <label>Pilih Ukuran:</label>
+                    <div class="size-options">
+                        <div class="size-option" onclick="selectSize(this)">39</div>
+                        <div class="size-option" onclick="selectSize(this)">40</div>
+                        <div class="size-option" onclick="selectSize(this)">41</div>
+                        <div class="size-option" onclick="selectSize(this)">42</div>
+                        <div class="size-option" onclick="selectSize(this)">43</div>
+                        <div class="size-option" onclick="selectSize(this)">44</div>
+                    </div>
+                </div>
+                <button class="buy-button">Tambah ke Keranjang</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=450&h=200&fit=crop" 
+                 alt="Adidas Ultraboost" class="modal-image">
+            <div class="modal-info">
+                <h2 class="modal-title">Adidas Ultraboost 22</h2>
+                <p class="modal-price">Rp 2.199.000</p>
+                <p class="modal-description">
+                    Sepatu lari dengan teknologi Boost yang memberikan energi kembali di setiap langkah. 
+                    Primeknit upper memberikan fit yang sempurna dan breathability yang optimal.
+                </p>
+                <div class="size-selector">
+                    <label>Pilih Ukuran:</label>
+                    <div class="size-options">
+                        <div class="size-option" onclick="selectSize(this)">39</div>
+                        <div class="size-option" onclick="selectSize(this)">40</div>
+                        <div class="size-option" onclick="selectSize(this)">41</div>
+                        <div class="size-option" onclick="selectSize(this)">42</div>
+                        <div class="size-option" onclick="selectSize(this)">43</div>
+                        <div class="size-option" onclick="selectSize(this)">44</div>
+                    </div>
+                </div>
+                <button class="buy-button">Tambah ke Keranjang</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=450&h=200&fit=crop" 
+                 alt="Converse All Star" class="modal-image">
+            <div class="modal-info">
+                <h2 class="modal-title">Converse All Star Classic</h2>
+                <p class="modal-price">Rp 899.000</p>
+                <p class="modal-description">
+                    Sepatu klasik yang timeless dengan desain ikonik yang tidak pernah lekang oleh waktu. 
+                    Canvas upper yang tahan lama dan sol karet yang fleksibel.
+                </p>
+                <div class="size-selector">
+                    <label>Pilih Ukuran:</label>
+                    <div class="size-options">
+                        <div class="size-option" onclick="selectSize(this)">39</div>
+                        <div class="size-option" onclick="selectSize(this)">40</div>
+                        <div class="size-option" onclick="selectSize(this)">41</div>
+                        <div class="size-option" onclick="selectSize(this)">42</div>
+                        <div class="size-option" onclick="selectSize(this)">43</div>
+                        <div class="size-option" onclick="selectSize(this)">44</div>
+                    </div>
+                </div>
+                <button class="buy-button">Tambah ke Keranjang</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=450&h=200&fit=crop" 
+                 alt="Vans Old Skool" class="modal-image">
+            <div class="modal-info">
+                <h2 class="modal-title">Vans Old Skool</h2>
+                <p class="modal-price">Rp 1.199.000</p>
+                <p class="modal-description">
+                    Sepatu skateboard legendaris dengan desain side stripe yang ikonik. 
+                    Suede dan canvas upper yang tahan lama dengan waffle sole yang memberikan grip maksimal.
+                </p>
+                <div class="size-selector">
+                    <label>Pilih Ukuran:</label>
+                    <div class="size-options">
+                        <div class="size-option" onclick="selectSize(this)">39</div>
+                        <div class="size-option" onclick="selectSize(this)">40</div>
+                        <div class="size-option" onclick="selectSize(this)">41</div>
+                        <div class="size-option" onclick="selectSize(this)">42</div>
+                        <div class="size-option" onclick="selectSize(this)">43</div>
+                        <div class="size-option" onclick="selectSize(this)">44</div>
+                    </div>
+                </div>
+                <button class="buy-button">Tambah ke Keranjang</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400&h=250&fit=crop" 
+                     alt="Reebok Classic" class="modal-image"">
+            <div class="modal-info">
+                <h2 class="modal-title">Reebok Classic Leather</h2>
+                <p class="modal-price">Rp 1.299.000</p>
+                <p class="modal-description">
+                    Sepatu klasik dengan desain retro yang timeless. Terbuat dari kulit asli dengan sol karet yang tahan lama dan nyaman digunakan.
+                </p>
+                <div class="size-selector">
+                    <label>Pilih Ukuran:</label>
+                    <div class="size-options">
+                        <div class="size-option" onclick="selectSize(this)">39</div>
+                        <div class="size-option" onclick="selectSize(this)">40</div>
+                        <div class="size-option" onclick="selectSize(this)">41</div>
+                        <div class="size-option" onclick="selectSize(this)">42</div>
+                        <div class="size-option" onclick="selectSize(this)">43</div>
+                        <div class="size-option" onclick="selectSize(this)">44</div>
+                    </div>
+                </div>
+                <button class="buy-button">Tambah ke Keranjang</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal6')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=450&h=200&fit=crop" 
+                 alt="New Balance 574" class="modal-image">
+            <div class="modal-info">
+                <h2 class="modal-title">New Balance 574</h2>
+                <p class="modal-price">Rp 1.299.000</p>
+                <p class="modal-description">
+                    Sepatu retro dengan teknologi ENCAP midsole yang memberikan stabilitas dan daya tahan luar biasa. 
+                    Desain klasik yang cocok untuk penggunaan sehari-hari.
+                </p>
+                <div class="size-selector">
+                    <label>Pilih Ukuran:</label>
+                    <div class="size-options">
+                        <div class="size-option" onclick="selectSize(this)">39</div>
+                        <div class="size-option" onclick="selectSize(this)">40</div>
+                        <div class="size-option" onclick="selectSize(this)">41</div>
+                        <div class="size-option" onclick="selectSize(this)">42</div>
+                        <div class="size-option" onclick="selectSize(this)">43</div>
+                        <div class="size-option" onclick="selectSize(this)">44</div>
+                    </div>
+                </div>
+                <button class="buy-button">Tambah ke Keranjang</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function selectSize(element) {
+            // Remove selected class from all size options in the same modal
+            const sizeOptions = element.parentElement.querySelectorAll('.size-option');
+            sizeOptions.forEach(option => option.classList.remove('selected'));
+            
+            // Add selected class to clicked element
+            element.classList.add('selected');
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Add some interactive feedback for buy buttons
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const originalText = this.textContent;
+                this.textContent = 'Ditambahkan! ✓';
+                this.style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
+                
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.background = 'linear-gradient(45deg, #ff6b6b, #ee5a24)';
+                }, 2000);
+            });
+        });
+    </script>
 </body>
 </html>
